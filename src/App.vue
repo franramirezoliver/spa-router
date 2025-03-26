@@ -1,9 +1,7 @@
 <template>
-  <DomusPagina></DomusPagina>
+  <RouterView />
 </template>
 
-<script setup lang="ts">
-import DomusPagina from './modulorum/landing/paginae/DomusPagina.vue';
-</script>
+<script setup lang="ts"></script>
 
 <style scoped></style>
