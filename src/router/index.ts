@@ -10,6 +10,11 @@ export const router = createRouter({
       component: DomusPagina,
     },
     {
+      path: '/features',
+      name: 'features',
+      component: () => import('@/modulorum/landing/paginae/PeculiaritatesPagina.vue'),
+    },
+    {
       path: '/pricing',
       name: 'pricing',
       component: () => import('@/modulorum/landing/paginae/PretiumPagina.vue'),
