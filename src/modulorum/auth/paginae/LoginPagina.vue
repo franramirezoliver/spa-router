@@ -1,7 +1,3 @@
-<script setup lang="ts">
-import { RouterLink } from 'vue-router';
-</script>
-
 <template>
   <h1 class="text-2xl font-semibold mb-4">Login</h1>
 
@@ -20,6 +16,7 @@ import { RouterLink } from 'vue-router';
     <div class="mb-4">
       <label for="password" class="block text-gray-600">Password</label>
       <input
+        v-model="clavem"
         type="password"
         id="password"
         name="password"
@@ -47,15 +44,26 @@ import { RouterLink } from 'vue-router';
   </form>
 
   <div class="mt-6 text-blue-500 text-center">
-    <RouterLink :to="{ name: 'register' }" class="hover:underline">Sign up Here</RouterLink>
+    <RouterLink :to="{ name: 'register' }" class="hover:underline">Login</RouterLink>
   </div>
 </template>
-
 <script lang="ts" setup>
+import { ref } from 'vue';
 import { useRouter } from 'vue-router';
+
 const router = useRouter();
 
+const clavem = ref<string>('');
+
 const cumLogin = () => {
-  router.replace({ name: 'home' });
+  if (clavem.value === 'ABC-123') {
+    localStorage.setItem('userId', 'ABC-123');
+  }
+
+  const ultimoSitu = localStorage.getItem('lastPath') ?? '/';
+
+  router.replace(ultimoSitu);
+
+  // console.log('login');
 };
 </script>
