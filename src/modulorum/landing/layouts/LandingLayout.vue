@@ -20,7 +20,11 @@
       </nav>
     </header>
     <main class="flex-1 flex items-center justify-center py-6">
-      <RouterView />
+      <router-view v-slot="{ Component }">
+        <keep-alive>
+          <component :is="Component" />
+        </keep-alive>
+      </router-view>
     </main>
     <footer class="flex items-center h-14 px-4 border-t border-gray-300 sm:h-16 md:px-6 lg:px-8">
       <p class="flex-1 text-sm text-gray-500 text-center">
