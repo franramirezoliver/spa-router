@@ -63,7 +63,5 @@ const cumLogin = () => {
   const ultimoSitu = localStorage.getItem('lastPath') ?? '/';
 
   router.replace(ultimoSitu);
-
-  // console.log('login');
 };
 </script>

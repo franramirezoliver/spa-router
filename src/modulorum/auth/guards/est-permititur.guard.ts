@@ -7,7 +7,7 @@ const estPermititurGuard = (
 ) => {
   const userId = localStorage.getItem('userId');
 
-  localStorage.setItem8('lastPath', to.path);
+  localStorage.setItem('lastPath', to.path);
   if (!userId) {
     return next({
       name: 'login',
